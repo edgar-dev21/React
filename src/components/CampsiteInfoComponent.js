@@ -18,17 +18,16 @@ class CampsiteInfo extends Component{
 renderCampsite(campsite) {
     if (campsite) {
         return (
-            <div className='col-md-5 m-1'>
+         <div className='col-md-5 m-1'>
             <Card>
-                
                 <CardImg top src={campsite.image} alt={campsite.name} />
                 <CardBody>
                     <CardTitle>{campsite.name}</CardTitle>
                     <CardText>{campsite.description}</CardText>
                 </CardBody>
             </Card>
-            </div>
-        );
+        </div>
+         );
 
     }
     return <div />;
