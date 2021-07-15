@@ -17,41 +17,47 @@ function RenderCard({item, isLoading, errMess}) {
             transformProps={{
                 exitTransform: 'scale(0.5) translateY(50%)'
             }}>
-        <Card>
-            <CardImg src={baseUrl + item.image} alt={item.name} />
-            <CardBody>
-                <CardTitle>{item.name}</CardTitle>
-                <CardText>{item.description}</CardText>
-            </CardBody>
-        </Card>
+            <Card>
+                <CardImg src={baseUrl + item.image} alt={item.name} />
+                <CardBody>
+                    <CardTitle>{item.name}</CardTitle>
+                    <CardText>{item.description}</CardText>
+                </CardBody>
+            </Card>
         </FadeTransform>
     );
 }
-
 function Home(props) {
     return (
         <div className="container">
-         <div className="row">
+            <div className="row">
                 <div className="col-md m-1">
-                    <RenderCard 
-                    item={props.campsite}
-                    isLoading={props.campsitesLoading}
-                    errMess={props.campsitesErrMess}
-                />
+                    <RenderCard
+                        item={props.campsite}
+                        isLoading={props.campsitesLoading}
+                        errMess={props.campsitesErrMess}
+                    />
                 </div>
                 <div className="col-md m-1">
-                <RenderCard
+                    <RenderCard
                         item={props.promotion}
                         isLoading={props.promotionLoading}
                         errMess={props.promotionErrMess}
-                />
+                    />
                 </div>
                 <div className="col-md m-1">
-                    <RenderCard item={props.partner} />
+                    <RenderCard 
+                        item={props.partner}
+                        isLoading={props.partnerLoading}
+                        errMess={props.partnerErrMess}
+                    />
                 </div>
-            </div>   
+            </div>
         </div>
     );
 }
+export default Home;
 
-export default Home;   
+
+
+
